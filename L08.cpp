@@ -148,18 +148,18 @@ void main(void)
 		cout << "================================\n";
 
 		//Usuwanie szumu (filtr VMF):
-		for (short kolumna = 1; kolumna < ROZMIAR - 1; kolumna++)
+		for (short wiersz = 1; wiersz < ROZMIAR - 1; wiersz++)
 		{
-			for (short wiersz = 1; wiersz < ROZMIAR - 1; wiersz++)
+			for (short kolumna = 1; kolumna < ROZMIAR - 1; kolumna++)
 			{
 				int tabDist[9][9] = {};
 				//wyznaczenie okna filtracji:
-				for (short x = -1; x <= 1; x++)
-					for (short y = -1; y <= 1; y++)
+				for (short x = -1; x <= 0; x++)
+					for (short y = -1; y <= 0; y++)
 					{
 						//liczenie dystansow kazdego piksela do kazdego piksela (w oknie)
-						for (short i = -1; i <= 1; i++)
-							for (short j = -1; j <= 1; j++)
+						for (short i = -1; i <= 0; i++)
+							for (short j = -1; j <= 0; j++)
 							{
 								int R1 = obraz[wiersz + x][kolumna + y][0];
 								int R2 = obraz[wiersz + i][kolumna + j][0];
@@ -171,7 +171,7 @@ void main(void)
 								int dystans = (int)sqrt(dR * dR + dG * dG + dB * dB);
 								short zrodlo = 3 * (x + 1) + (y + 1);
 								short cel = 3 * (i + 1) + (j + 1);
-								tabDist[zrodlo][cel] = dystans;
+								//tabDist[zrodlo][cel] = dystans;
 							}
 					}
 				int sumy[9] = {};
@@ -231,8 +231,8 @@ void main(void)
 	clock_t koniec = clock();
 	clock_t cykl = koniec - start;
 	double czas = (double)cykl / CLOCKS_PER_SEC;
-	cout << endl << "CZAS WYKONANIA = " << czas << endl;
 	
+	cout << endl << endl;
 
 	//BEZ OPTYMALIZACJI
 
@@ -242,7 +242,7 @@ void main(void)
 	{
 
 	short obraz[ROZMIAR][ROZMIAR][3] = {};
-	srand(time(0));
+	srand(1);
 	short pendzel[3] = {};
 	double szansa = 0.1;
 	double wspGamma = 0.45;
@@ -380,7 +380,7 @@ void main(void)
 clock_t koniec2 = clock();
 clock_t cykl2 = koniec2 - start2;
 double czas2 = (double)cykl2 / CLOCKS_PER_SEC;
-cout << endl << "CZAS WYKONANIA = " << czas2 << endl;
+cout << endl << "CZAS WYKONANIA Z OPTYMALIZACJIA= " << czas << "    CZAS WYKONANIA BEZ OPTYMALIZACJI= "<< czas2 <<endl;
 }
 
 #endif

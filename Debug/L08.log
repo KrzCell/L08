@@ -1,5 +1,4 @@
 ﻿  L08.cpp
 D:\studia\PPK\Repo\L08\L08\L08.cpp(109,1): warning C4326: zwracany typ "main" powinien być "int" zamiast "void"
-D:\studia\PPK\Repo\L08\L08\L08.cpp(113,13): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
-D:\studia\PPK\Repo\L08\L08\L08.cpp(235,12): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
+D:\studia\PPK\Repo\L08\L08\L08.cpp(114,13): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
   L08.vcxproj -> D:\studia\PPK\Repo\L08\Debug\L08.exe
