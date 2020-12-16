@@ -9,7 +9,7 @@ using namespace std;
 void mc(double a, double b, double c, double xp, double xk)
 {
     int n = 1000;
-    double y, x, ymin=1000, xmin=1000;
+    double y, x, ymin=xk*100, xmin=xk*100;
     srand(time(NULL));
     if (a > 0) {
         for (int i = 0; i < n; i++)
