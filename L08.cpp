@@ -119,8 +119,7 @@ void main(void)
 		//Generowanie koloru tła:
 		for (short i = 0; i < 3; i++)
 			pendzel[i] = rand() % 256;
-
-		//Generowanie tła obrazu oraz zakłócenia:
+		
 		for (short wiersz = 0; wiersz < ROZMIAR; wiersz++)
 		{
 			for (short kolumna = 0; kolumna < ROZMIAR; kolumna++)
@@ -158,8 +157,8 @@ void main(void)
 					for (short y = -1; y <= 0; y++)
 					{
 						//liczenie dystansow kazdego piksela do kazdego piksela (w oknie)
-						for (short i = -1; i <= 0; i++)
-							for (short j = -1; j <= 0; j++)
+						for (short i = 0; i <= 1; i++)
+							for (short j = 0; j <= 1; j++)
 							{
 								int R1 = obraz[wiersz + x][kolumna + y][0];
 								int R2 = obraz[wiersz + i][kolumna + j][0];
@@ -231,12 +230,9 @@ void main(void)
 	clock_t koniec = clock();
 	clock_t cykl = koniec - start;
 	double czas = (double)cykl / CLOCKS_PER_SEC;
-	
 	cout << endl << endl;
 
 	//BEZ OPTYMALIZACJI
-
-
 
 	clock_t start2 = clock();
 	{
@@ -380,7 +376,7 @@ void main(void)
 clock_t koniec2 = clock();
 clock_t cykl2 = koniec2 - start2;
 double czas2 = (double)cykl2 / CLOCKS_PER_SEC;
-cout << endl << "CZAS WYKONANIA Z OPTYMALIZACJIA= " << czas << "    CZAS WYKONANIA BEZ OPTYMALIZACJI= "<< czas2 <<endl;
+cout << endl << "CZAS WYKONANIA Z OPTYMALIZACJA= " << czas << "    CZAS WYKONANIA BEZ OPTYMALIZACJI= "<< czas2 <<endl;
 }
 
 #endif
