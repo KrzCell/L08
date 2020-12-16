@@ -9,19 +9,23 @@ using namespace std;
 void mc(double a, double b, double c, double xp, double xk)
 {
     int n = 1000;
-    double y, x, min=1000, min2=1000;
-    srand(time(NULL)); 
-    for (int i = 0; i < n; i++)
-    {
-        x = xp + RND_ZZ * (xk - xp);
-        y = (a * x * x) + (b * x) + c;
-        if (min > y)
+    double y, x, ymin=1000, xmin=1000;
+    srand(time(NULL));
+    if (a > 0) {
+        for (int i = 0; i < n; i++)
         {
-            min = y;
-            min2 = x;
+            x = xp + RND_ZZ * (xk - xp);
+            y = (a * x * x) + (b * x) + c;
+            if (ymin > y)
+            {
+                ymin = y;
+                xmin = x;
+            }
         }
+        cout << "y(min) = " << ymin << "  dla x = " << xmin << endl;
     }
-    cout << "y(min) = " << min << "  dla x = " << min2 << endl;
+    else
+        cout << "BLAD -> a<0";
 
 }
 

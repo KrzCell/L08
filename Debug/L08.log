@@ -1,4 +1,4 @@
 ﻿  L08.cpp
 D:\studia\PPK\Repo\L08\L08\L08.cpp(13,15): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
-D:\studia\PPK\Repo\L08\L08\L08.cpp(30,15): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
+D:\studia\PPK\Repo\L08\L08\L08.cpp(34,15): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
   L08.vcxproj -> D:\studia\PPK\Repo\L08\Debug\L08.exe
